@@ -35,7 +35,6 @@ exclude = [
 [[tool.mypy.overrides]]
 module = [
     "setuptools",
-    "whisper",
 ]
 ignore_missing_imports = true
 
