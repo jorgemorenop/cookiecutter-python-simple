@@ -5,11 +5,11 @@ Cookiecutter template for a simple Python project that includes some pre-configu
 You can create a new project based on this template using `cookiecutter`:
 
 1. Install *cookiecutter* with `pip`:
-    ```
-   pip install cookiecutter
+   ```bash
+   python -m pip install cookiecutter
    ```
 2. Supposing that you have git configured, run:
-    ```
+   ```bash
    cookiecutter gh:jorgemorenop/cookiecutter-python-simple
    ```
 
