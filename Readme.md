@@ -10,12 +10,8 @@ You can create a new project based on this template using `cookiecutter`:
    ```
 2. Supposing that you have git configured, run:
     ```
-   cookiecutter git+ssh://git@github.com/<organization>/<repo-name>.git
+   cookiecutter gh:jorgemorenop/cookiecutter-python-simple
    ```
-   or, if your git uses https instead of ssh:
-   ```
-   cookiecutter https://github.com/<organization>/<repo-name>.git
-     ```
 
 This will create a new project using the contents of the {{cookiecutter.__project_slug}} folder. Check the Readme.md file
 within that folder for more information about it.
