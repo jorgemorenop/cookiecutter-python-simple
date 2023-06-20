@@ -1,0 +1,85 @@
+[project]
+name = "{{cookiecutter.__project_slug}}"
+version = "0.1.0"
+description = "{{cookiecutter.project_description}}"
+authors = [
+    {name = "{{cookiecutter.author}}", email ="{{cookiecutter.author_email}}"},
+]
+dependencies = []
+requires-python = ">={{cookiecutter.min_python_version}}"
+license = {text = "MIT"}
+readme = "Readme.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "mypy",
+    "black",
+    "ruff",
+]
+
+[tool.setuptools]
+packages = [
+    "{{cookiecutter.package_name}}"
+]
+
+[tool.mypy]
+python_version = "{{cookiecutter.min_python_version}}"
+strict = true
+
+exclude = [
+    '^setup\.py$',  # TOML literal string (single quotes, no escaping necessary)
+    "venv",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "setuptools",
+    "whisper",
+]
+ignore_missing_imports = true
+
+[tool.ruff]
+select = [
+    "E",    # pycodestyle
+    "W",    # pycodestyle
+    "F",    # pyflake
+    "I",    # isort
+    "S",    # flake8-bandit
+    "B",    # flake8-bugbear
+    "UP",   # pyupgrade
+    "N",    # pep8-naming
+    "D",    # pydocstyle
+    "RUF",  # Ruff specific rules
+]
+
+exclude = [
+    ".git",
+    ".idea",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    "venv",
+    "build",
+    "assets",
+]
+
+ignore = [
+    "UP007",    # Use X | Y for type annotations (not working with pydantic yet)
+    "D100",     # Missing docstring in public module
+    "D101",     # Missing docstring in public class
+    "D203",     # no-blank-line-before-class (conflict with D211)
+    "D213",     # multi-line-summary-second-line (conflict with D212)
+]
+
+line-length = 120
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["D104"]
+"tests/*" = ["S", "D"]
+
+[tool.black]
+line-length = 120
+target-version = ["py{{cookiecutter.min_python_version.replace('.', '')}}"]

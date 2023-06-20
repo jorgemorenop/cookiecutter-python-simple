@@ -1,0 +1,10 @@
+{
+  "project_name": "Example Project",
+  "__project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "project_description": "This is a long description for the generated python project.",
+  "author": "jorge",
+  "author_email": "jorgemorenodev@gmail.com",
+  "min_python_version": "3.8",
+  "__min_python_subversion": "{{ cookiecutter.min_python_version.split('.')[1]|int }}"
+}
